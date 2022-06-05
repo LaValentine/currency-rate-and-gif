@@ -1,0 +1,7 @@
+version: '3.1'
+services:
+  client:
+    container_name: currency-rate-and-gif
+    build: ./
+    ports:
+      - "8080:8080"

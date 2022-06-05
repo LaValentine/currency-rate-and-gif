@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Exchange rate data</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        .main-div-style {
+            font: 95% Arial, Helvetica, sans-serif;
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 20px;
+            background: #F7F7F7;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .main-div-style h1 {
+            background: #43D1AF;
+            padding: 20px;
+            font-size: 140%;
+            font-weight: 300;
+            text-align: center;
+            color: #fff;
+        }
+        img {
+            margin: 0 20px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+    <body>
+        <div class="main-div-style">
+            <div class="info-div">
+                <h1>Exchange rate data </h1>
+                <p th:if="${response.getCurrency() != null}" >Currency:
+                    <span th:text="${response.getCurrency()}"></span>
+                </p>
+                <p th:if="${response.getBaseCurrency() != null}" >Base currency:
+                    <span th:text="${response.getBaseCurrency()}"></span>
+                </p>
+                <p th:if="${response.getYesterdayRate() != null}" >Yesterday's rate:
+                    <span th:text="${response.getYesterdayRate()}"></span>
+                </p>
+                <p th:if="${response.getTodayRate() != null}" >Today's rate:
+                    <span th:text="${response.getTodayRate()}"></span>
+                </p>
+                <p th:if="${response.getDescription() != null}" >Description:
+                    <span th:text="${response.getDescription()}"></span>
+                </p>
+            </div>
+            <img th:if="${response.getGifUrl() != null}" th:src="${response.getGifUrl()}">
+        </div>
+    </body>
+</html>

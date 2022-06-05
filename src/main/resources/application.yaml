@@ -1,0 +1,6 @@
+# Exception messages
+exception:
+  giphy: "Unknown exception with giphy.com"
+  giphy-connection: "Refused connection with giphy.com"
+  openexchangerates: "Invalid currency or openexchangerates.org hasn't today's data"
+  openexchangerates-connection: "Refused connection with openexchangerates.org"
